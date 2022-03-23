@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIMC.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelTabela" TargetType="Label">                
+                <Setter Property="TextColor" Value="black"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Padding" Value="3"/>
+            </Style>
+
+            <Style x:Key="labelInput" TargetType="Label">
+                
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Padding" Value="3"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout BackgroundColor="#a2a5a6">
+        <Frame BackgroundColor="#525454" Padding="24" CornerRadius="0">
+            <Label Text="Calculadora de IMC" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <StackLayout
+               HorizontalOptions="CenterAndExpand"
+               WidthRequest="300"
+         >
+
+
+            <Label Text="Digite seu peso" Style="{StaticResource labelInput}"/>
+            <Entry x:Name="valor_peso"/>
+
+            <Label Text="Digite sua altura" Style="{StaticResource labelInput}"/>
+            <Entry x:Name="valor_altura"/>
+
+            <Button Text="Enviar" Clicked="Calcular_IMC" />
+        </StackLayout>
+        
+    
+        <StackLayout>
+            <Grid ColumnDefinitions="*, *"
+                  RowDefinitions="*, *, *, *, *, *, *"                  
+                  Margin="20"
+                  Padding="10"
+                  BackgroundColor="white"                 
+             >
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Valores de Referência" Style="{StaticResource labelTabela}" TextColor="Blue"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="IMC" Style="{StaticResource labelTabela}" TextColor="Blue"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Abaixo do Peso" Style="{StaticResource labelTabela}" />
+                <Label Grid.Row="1" Grid.Column="1" Text="Abaixo de 18,5" Style="{StaticResource labelTabela}"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Peso Normal" Style="{StaticResource labelTabela}"/>
+                <Label Grid.Row="2" Grid.Column="1" Text="18,5 - 24,9" Style="{StaticResource labelTabela}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Excesso de Peso" Style="{StaticResource labelTabela}"/>
+                <Label Grid.Row="3" Grid.Column="1" Text="25 - 29,9" Style="{StaticResource labelTabela}"/>
+
+                <Label Grid.Row="4" Grid.Column="0" Text="Obesidade Classe I" Style="{StaticResource labelTabela}"/>
+                <Label Grid.Row="4" Grid.Column="1" Text="30 - 34,9" Style="{StaticResource labelTabela}"/>
+
+                <Label Grid.Row="5" Grid.Column="0" Text="Obesidade Classe II" Style="{StaticResource labelTabela}"/>
+                <Label Grid.Row="5" Grid.Column="1" Text="35 - 39,9" Style="{StaticResource labelTabela}"/>
+
+                <Label Grid.Row="6" Grid.Column="0" Text="Obesidade Clase III" Style="{StaticResource labelTabela}"/>
+                <Label Grid.Row="6" Grid.Column="1" Text="Maior ou Igual a 40" Style="{StaticResource labelTabela}"/>
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
