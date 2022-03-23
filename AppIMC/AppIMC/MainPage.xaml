@@ -12,15 +12,15 @@
                 <Setter Property="Padding" Value="3"/>
             </Style>
 
-            <Style x:Key="labelInput" TargetType="Label">
-                
+            <Style x:Key="labelInput" TargetType="Label">                
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="Padding" Value="3"/>
             </Style>
         </ResourceDictionary>
-    </ContentPage.Resources>
+    </ContentPage.Resources>  
+    
     <StackLayout BackgroundColor="#a2a5a6">
         <Frame BackgroundColor="#525454" Padding="24" CornerRadius="0">
             <Label Text="Calculadora de IMC" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
@@ -29,8 +29,6 @@
                HorizontalOptions="CenterAndExpand"
                WidthRequest="300"
          >
-
-
             <Label Text="Digite seu peso" Style="{StaticResource labelInput}"/>
             <Entry x:Name="valor_peso"/>
 
@@ -38,8 +36,7 @@
             <Entry x:Name="valor_altura"/>
 
             <Button Text="Enviar" Clicked="Calcular_IMC" />
-        </StackLayout>
-        
+        </StackLayout>        
     
         <StackLayout>
             <Grid ColumnDefinitions="*, *"
@@ -48,7 +45,6 @@
                   Padding="10"
                   BackgroundColor="white"                 
              >
-
                 <Label Grid.Row="0" Grid.Column="0" Text="Valores de Referência" Style="{StaticResource labelTabela}" TextColor="Blue"/>
                 <Label Grid.Row="0" Grid.Column="1" Text="IMC" Style="{StaticResource labelTabela}" TextColor="Blue"/>
 
